@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Layout for the editor -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditorActivity"
+    android:padding="20dp"
+    >
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Title" />
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/title"
+            style="@style/EditorFieldStyle"
+            android:hint="L'assomoir" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Author" />
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/author"
+            style="@style/EditorFieldStyle"
+            android:hint="Emile Zola" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Price (€)" />
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/price"
+            style="@style/EditorFieldStyle"
+            android:hint="9,99"
+            android:text="0"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Stock (pc)" />
+       <RelativeLayout
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="3">
+           <ImageView
+               android:id="@+id/minus"
+               android:layout_width="25dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_minus"
+               android:layout_centerVertical="true"
+               android:background="?selectableItemBackground" />
+
+           <EditText
+               android:id="@+id/quantity"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_toRightOf="@id/minus"
+               android:layout_toEndOf="@id/minus"
+               android:text="10"
+               android:inputType="number"
+               android:maxLength="5"/>
+           <ImageView
+               android:id="@+id/plus"
+               android:layout_width="25dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_plus"
+               android:layout_toRightOf="@id/quantity"
+               android:layout_toEndOf="@id/quantity"
+               android:layout_centerVertical="true"
+               android:background="?selectableItemBackground" />
+       </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Supplier Name" />
+        <!-- Name field -->
+        <EditText
+           android:id="@+id/supplier"
+            style="@style/EditorFieldStyle"
+            android:hint="Mondadori Ragusa" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Supplier Telephone" />
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/telephone"
+            style="@style/EditorFieldStyle"
+            android:hint="0932999999"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/call_supp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_call"
+            android:background="?selectableItemBackground"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>
